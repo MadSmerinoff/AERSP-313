@@ -1,0 +1,48 @@
+#include <iostream>
+
+using namespace std;
+
+double h; //Step Size
+double x0; //Initial Value of x
+double y; //Initial Value of y
+double xn; //End value for x
+double x;
+double yd; //Dummy variable to get C++ to work, copy of y
+double i;
+
+
+int main()
+{
+
+	cout << "Please enter the initial value of x: ";
+	cin >> x0;
+	cout << "Please enter the initial value of y: ";
+	cin >> y;
+	cout << "Please enter the value to which x will be calculated: ";
+	cin >> x;
+	cout << "Please enter the desired step size: ";
+	cin >> h;
+
+	x = x0;
+
+	cout << x0 << endl;
+	cout << y << endl;
+	cout << "____" << endl;
+
+	for (i = 0; i < 320; i++)
+	{
+	    yd = y;
+	    
+		y += (h * (x * yd * yd));
+
+		x += h;
+
+		cout << x << endl;
+		cout << y << endl;
+		cout << "____" << endl;
+
+	}
+
+	return 0;
+
+}
