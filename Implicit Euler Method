@@ -1,0 +1,52 @@
+#include <iostream>
+
+using namespace std;
+
+double h; //Step Size
+double x0; //Initial Value of x
+double y; //Initial Value of y
+double x;
+double yd; //Dummy variable to get C++ to work, copy of y
+int i;
+double yi; //Y-Value for the improved Euler Method
+
+
+int main()
+{
+
+	cout << "Please enter the initial value of x: ";
+	cin >> x0;
+	cout << "Please enter the initial value of y: ";
+	cin >> y;
+	cout << "For the Implicit Method please re enter the inital value of y: ";
+	cin >> yi;
+	cout << "Remeber to change the for to include the necessary amount of steps. " << endl;
+	cout << "Please enter the desired step size: ";
+	cin >> h;
+
+	x = x0;
+
+	cout << x0 << endl;
+	cout << y << endl;
+	cout << "____" << endl;
+
+	for (i = 0; i < 8; i++)
+	{
+	    yd = y;
+	    
+		y += (h*((-x)*x*yd));
+		
+		x += h;
+		
+		yi += (h*((-x)*x*y));
+
+
+		cout << x << endl;
+		cout << yi << endl;
+		cout << "____" << endl;
+
+	}
+
+	return 0;
+
+}
